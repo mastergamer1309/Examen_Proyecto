@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D6535BF2-F7BF-4313-8027-06ED8EBF61F9}</ProjectGuid>
+    <ProjectGuid>{4DDD2563-3A47-4377-AE6A-05AB287E82B4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BibliotecaDeClasess</RootNamespace>
-    <AssemblyName>BibliotecaDeClasess</AssemblyName>
+    <RootNamespace>BibliotecaClases</RootNamespace>
+    <AssemblyName>BibliotecaClases</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CDatosProyecto.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="CPCif.cs" />
     <Compile Include="CPEfectivo.cs" />
     <Compile Include="CPGastosAdministrativos.cs" />

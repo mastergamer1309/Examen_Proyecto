@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BibliotecaClases;
 
 namespace Proyecto_Examen
 {
@@ -27,6 +28,12 @@ namespace Proyecto_Examen
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void BtnIngresarDatosProyecto_Click(object sender, RoutedEventArgs e)
+        {
+            
+            
         }
     }
 }
