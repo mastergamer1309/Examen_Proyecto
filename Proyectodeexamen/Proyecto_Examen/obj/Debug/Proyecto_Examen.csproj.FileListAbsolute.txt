@@ -40,3 +40,6 @@ D:\Josias\asdasd\Examen_Proyecto\Proyectodeexamen\Proyecto_Examen\obj\Debug\Proy
 D:\Josias\asdasd\Examen_Proyecto\Proyectodeexamen\Proyecto_Examen\obj\Debug\Proyecto_Examen.csproj.CoreCompileInputs.cache
 D:\Josias\asdasd\Examen_Proyecto\Proyectodeexamen\Proyecto_Examen\obj\Debug\Proyecto_Examen.exe
 D:\Josias\asdasd\Examen_Proyecto\Proyectodeexamen\Proyecto_Examen\obj\Debug\Proyecto_Examen.pdb
+D:\Josias\asdasd\Examen_Proyecto\Proyectodeexamen\Proyecto_Examen\bin\Debug\BibliotecaClasess.dll
+D:\Josias\asdasd\Examen_Proyecto\Proyectodeexamen\Proyecto_Examen\bin\Debug\BibliotecaClasess.pdb
+D:\Josias\asdasd\Examen_Proyecto\Proyectodeexamen\Proyecto_Examen\obj\Debug\Proyecto_Examen.csproj.CopyComplete

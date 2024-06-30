@@ -1,0 +1,6 @@
+D:\Josias\asdasd\Examen_Proyecto\Proyectodeexamen\BibliotecaClasess\bin\Debug\BibliotecaClasess.dll
+D:\Josias\asdasd\Examen_Proyecto\Proyectodeexamen\BibliotecaClasess\bin\Debug\BibliotecaClasess.pdb
+D:\Josias\asdasd\Examen_Proyecto\Proyectodeexamen\BibliotecaClasess\obj\Debug\BibliotecaClasess.csproj.AssemblyReference.cache
+D:\Josias\asdasd\Examen_Proyecto\Proyectodeexamen\BibliotecaClasess\obj\Debug\BibliotecaClasess.csproj.CoreCompileInputs.cache
+D:\Josias\asdasd\Examen_Proyecto\Proyectodeexamen\BibliotecaClasess\obj\Debug\BibliotecaClasess.dll
+D:\Josias\asdasd\Examen_Proyecto\Proyectodeexamen\BibliotecaClasess\obj\Debug\BibliotecaClasess.pdb

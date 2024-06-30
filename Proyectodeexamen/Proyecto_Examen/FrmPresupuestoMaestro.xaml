@@ -11,13 +11,14 @@
             <Grid Background="#FFE5E5E5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="11*"/>
-                    <ColumnDefinition Width="1042*"/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="119*"/>
+                    <ColumnDefinition Width="923*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Label x:Name="LblNombreEmpresa" Grid.Column="1" Content="Nombre de la empresa" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
-                <TextBox x:Name="TxtNombreEmpresa" Grid.Column="1" HorizontalAlignment="Left" Margin="281,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" FontSize="20"/>
-                <Label x:Name="LblPeriodoTiempo" Grid.Column="1" Content="Periodo de Tiempo" HorizontalAlignment="Left" Margin="10,115,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="20"/>
-                <ComboBox x:Name="CmbPeriodoTiempo" Grid.Column="1" HorizontalAlignment="Left" Margin="281,114,0,0" VerticalAlignment="Top" Width="273" FontSize="20">
+                <Label x:Name="LblNombreEmpresa" Grid.Column="1" Content="Nombre de la empresa" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black" Grid.ColumnSpan="2"/>
+                <TextBox x:Name="TxtNombreEmpresa" Grid.Column="2" HorizontalAlignment="Left" Margin="162,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" FontSize="20"/>
+                <Label x:Name="LblPeriodoTiempo" Grid.Column="1" Content="Periodo de Tiempo" HorizontalAlignment="Left" Margin="10,115,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="20" Grid.ColumnSpan="2"/>
+                <ComboBox x:Name="CmbPeriodoTiempo" Grid.Column="2" HorizontalAlignment="Left" Margin="162,114,0,0" VerticalAlignment="Top" Width="273" FontSize="20" SelectionChanged="CmbPeriodoTiempo_SelectionChanged">
                     <ComboBoxItem Content="Mensual"/>
                     <ComboBoxItem Content="Bimestral"/>
                     <ComboBoxItem Content="trimestral"/>
@@ -25,37 +26,39 @@
                     <ComboBoxItem Content="Semestral"/>
                     <ComboBoxItem Content="Anual"/>
                 </ComboBox>
-                <Label x:Name="LblPeriodoAños" Grid.Column="1" Content="Periodo en Años" HorizontalAlignment="Left" Margin="10,198,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
-                <TextBox x:Name="TxtPeriodoAños" Grid.Column="1" HorizontalAlignment="Left" Margin="281,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" FontSize="20"/>
-                <Button x:Name="BtnIngresarDatosProyecto" Grid.Column="1" Content="Ingresar Datos" HorizontalAlignment="Left" Margin="10,316,0,0" VerticalAlignment="Top" Height="66" Width="192" FontSize="20" FontFamily="Arial Black" Click="BtnIngresarDatosProyecto_Click"/>
+                <Label x:Name="LblPeriodoAños" Grid.Column="1" Content="Periodo en Años" HorizontalAlignment="Left" Margin="10,198,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black" Grid.ColumnSpan="2"/>
+                <TextBox x:Name="TxtPeriodoAños" Grid.Column="2" HorizontalAlignment="Left" Margin="162,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" FontSize="20"/>
+                <Button x:Name="BtnIngresarDatosProyecto" Grid.Column="1" Content="Ingresar Datos" HorizontalAlignment="Left" Margin="94,316,0,0" VerticalAlignment="Top" Height="66" Width="192" FontSize="20" FontFamily="Arial Black" Click="BtnIngresarDatosProyecto_Click" Grid.ColumnSpan="2"/>
+                <TextBox x:Name="asdasdasd" Grid.Column="2" HorizontalAlignment="Left" Margin="645,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="92"/>
             </Grid>
         </TabItem>
         <TabItem x:Name="TbiPVentas" Header="PVentas">
             <Grid Background="#FFE5E5E5">
                 <DataGrid x:Name="DgPVentas"  Margin="10,259,10,10" SelectionChanged="DataGrid_SelectionChanged"/>
-                <GroupBox x:Name="GbxPVentas" Header="" Margin="10,0,10,250">
+                <GroupBox x:Name="GbxPVentas" Header="" Margin="10,0,416,250" IsEnabled="False">
                     <Grid>
                         <Label x:Name="LblUnidadesVendidas" Content="Unidades vendidas:" HorizontalAlignment="Left" Margin="25,90,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
                         <Label x:Name="LblPrecioUnitario" Content="Precio unitario(USD):" HorizontalAlignment="Left" Margin="25,152,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
                         <TextBox x:Name="TxtUnidadesVendidas" HorizontalAlignment="Left" Margin="305,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" FontSize="20" FontFamily="Arial Black"/>
                         <TextBox x:Name="TxtPrecioUnitario" HorizontalAlignment="Left" Margin="305,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" FontSize="20" FontFamily="Arial Black"/>
-                        <Button x:Name="NuevoPeriodoPVentas" Content="Nuevo periodo" HorizontalAlignment="Left" Margin="727,82,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black" Height="48" Width="186"/>
-                        <Button x:Name="IngresarDatosPVentas" Content="Ingresar Datos" HorizontalAlignment="Left" Margin="727,144,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black" Height="48" Width="186"/>
                         <Label x:Name="LblProducto" Content="Producto:" HorizontalAlignment="Left" Margin="25,25,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
                         <TextBox x:Name="TxtProducto" HorizontalAlignment="Left" Margin="305,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" FontSize="20" FontFamily="Arial Black"/>
                     </Grid>
                 </GroupBox>
+                <Button x:Name="NuevoPeriodoPVentas" Content="Nuevo periodo" HorizontalAlignment="Left" Margin="727,82,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black" Height="48" Width="186" Click="NuevoPeriodoPVentas_Click"/>
+                <Button x:Name="IngresarDatosPVentas" Content="Ingresar Datos" HorizontalAlignment="Left" Margin="727,144,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black" Height="48" Width="186"/>
             </Grid>
         </TabItem>
         <TabItem x:Name="TbiPProduccion" Header="PProduccion">
             <Grid Background="#FFE5E5E5">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="12*"/>
-                    <ColumnDefinition Width="515*"/>
+                    <ColumnDefinition Width="24*"/>
+                    <ColumnDefinition Width="127*"/>
+                    <ColumnDefinition Width="903*"/>
                     <ColumnDefinition Width="0*"/>
                 </Grid.ColumnDefinitions>
-                <DataGrid x:Name="DgPProduccion"  Margin="10,290,10,10" SelectionChanged="DataGrid_SelectionChanged" Grid.ColumnSpan="2"/>
-                <GroupBox Header="GroupBox" Margin="10,0,10,215" Grid.ColumnSpan="2">
+                <DataGrid x:Name="DgPProduccion"  Margin="10,290,10,10" SelectionChanged="DataGrid_SelectionChanged" Grid.ColumnSpan="3"/>
+                <GroupBox Header="GroupBox" Margin="10,0,10,215" Grid.ColumnSpan="3">
                     <Grid>
                         <Label x:Name="LblUnidadesVendidas1" Content="Unidades vendidas:" HorizontalAlignment="Left" Margin="18,26,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
                         <Label x:Name="LblInventarioFinalDeseado" Content="Inventario Final Deseado" HorizontalAlignment="Left" Margin="18,145,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black" Width="282"/>

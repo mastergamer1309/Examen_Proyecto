@@ -119,9 +119,9 @@
     <Resource Include="Image1.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BibliotecaClases\BibliotecaClases.csproj">
-      <Project>{4ddd2563-3a47-4377-ae6a-05ab287e82b4}</Project>
-      <Name>BibliotecaClases</Name>
+    <ProjectReference Include="..\BibliotecaClasess\BibliotecaClasess.csproj">
+      <Project>{146bffa7-977a-4369-80fc-8973fd46e6ed}</Project>
+      <Name>BibliotecaClasess</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
