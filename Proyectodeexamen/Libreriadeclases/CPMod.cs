@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BibliotecaDeClasess
 {
-    internal class CPGastos
+    internal class CPMod
     {
     }
 }
