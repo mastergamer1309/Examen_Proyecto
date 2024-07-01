@@ -80,7 +80,7 @@ namespace Proyecto_Examen
         private void BtnIngresarDatosProyecto_Click(object sender, RoutedEventArgs e)
         {
 
-            if (TxtNombreEmpresa.Text.Length < 1 || TxtPeriodoAños.Text.Length < 1 || CmbPeriodoTiempo.SelectedIndex < 0)
+            if (TxtNombreEmpresa.Text.Length < 1 || TxtPeriodoAños.Text.Length < 1 || CmbPeriodoTiempo.SelectedIndex < 0 || DtpFechaPresupuesto.SelectedDate == null)
             {
                 MessageBox.Show("Obligatorio el llenado de datos", "Informacion", MessageBoxButton.OK, MessageBoxImage.Error);
             }
@@ -92,12 +92,13 @@ namespace Proyecto_Examen
 
                 datosGenerales.PeriodoDeTiempo = CmbPeriodoTiempo.SelectionBoxItem.ToString();
 
+                datosGenerales.FechaPresupuesto = DtpFechaPresupuesto.SelectedDate.Value.ToShortDateString();
 
                 datosGenerales.Periodoenanos = Convert.ToInt32(TxtPeriodoAños.Text);
 
                 datosGenerales.calcularPeriodoDeTiempo(datosGenerales);
 
-                asdasdasd.Text = datosGenerales.PeriodoDeTiempoConvertido.ToString();
+                TxtPeriodoTotal.Text = datosGenerales.PeriodoDeTiempoConvertido.ToString();
 
                 verificarDatosIngresados = true;
 
@@ -525,18 +526,21 @@ namespace Proyecto_Examen
         private void BtnCalcularPresupuestoMaestro_Click(object sender, RoutedEventArgs e)
         {
 
-            TotalDeCostos = (CostosDeProduccionTotalesDelAno + GastosAdministrativosYDeVentasDelAno);
+            TotalDeCostos = CostosDeProduccionTotalesDelAno + GastosAdministrativosYDeVentasDelAno;
+            UtilidadNeta = IngresosTotalesDelAno - TotalDeCostos;
 
-            UtilidadNeta = (IngresosTotalesDelAno - TotalDeCostos);
-
-            
-                
-
+            if (IngresosTotalesDelAno == 0 || CostosDeProduccionTotalesDelAno == 0 || GastosAdministrativosYDeVentasDelAno == 0 || CostosIndirectosDeFabricacionDelAno == 0 || TotalDeCostos == 0)
+            {
+                MessageBox.Show("Faltan datos necesarios para calcular el presupuesto maestro", "Informacion", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
                 TxtPresupuestoMaestro.Text = impresion();
-            
-           
+            }
 
-            
+
+
+
 
         }
 
@@ -544,12 +548,25 @@ namespace Proyecto_Examen
         {
             string retorno = "";
 
+            retorno += "\n";
+            retorno += "Nombre de la empresa: " + TxtNombreEmpresa.Text + "\n";
+            retorno += "Fecha del calculo " + DtpFechaPresupuesto.SelectedDate.Value.ToShortDateString() +"\n";
+            retorno += "Periodos Totales: " + TxtPeriodoTotal.Text + "\n";
             
-
             retorno += "Utilidad Neta (Ingresos Totales - Costos Totales): $" + IngresosTotalesDelAno + " -  $" + TotalDeCostos + " = $" +
-                UtilidadNeta;
+                UtilidadNeta + "\n";
 
+            retorno += "Utilidad Neta: " + UtilidadNeta;
             return retorno;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            FrmPantallaPrincipal frmPantallaPrincipal = new FrmPantallaPrincipal();
+
+            frmPantallaPrincipal.Show();
+
+            this.Close();
         }
     }
 }

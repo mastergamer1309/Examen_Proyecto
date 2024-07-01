@@ -18,7 +18,9 @@
                     <ColumnDefinition Width="75*"/>
                     <ColumnDefinition Width="54*"/>
                     <ColumnDefinition Width="414*"/>
-                    <ColumnDefinition Width="304*"/>
+                    <ColumnDefinition Width="39*"/>
+                    <ColumnDefinition Width="38*"/>
+                    <ColumnDefinition Width="227*"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Label x:Name="LblNombreEmpresa" Grid.Column="1" Content="Nombre de la empresa" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black" Grid.ColumnSpan="5" Height="33" Width="257"/>
@@ -34,8 +36,12 @@
                 </ComboBox>
                 <Label x:Name="LblPeriodoAños" Grid.Column="1" Content="Periodo en Años" HorizontalAlignment="Left" Margin="10,198,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black" Grid.ColumnSpan="5" Height="33" Width="187"/>
                 <TextBox x:Name="TxtPeriodoAños" Grid.Column="6" HorizontalAlignment="Left" Margin="11,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" FontSize="20" Grid.ColumnSpan="2" Height="29"/>
-                <Button x:Name="BtnIngresarDatosProyecto" Grid.Column="2" Content="Ingresar Datos" HorizontalAlignment="Left" Margin="13,316,0,0" VerticalAlignment="Top" Height="66" Width="192" FontSize="20" FontFamily="Arial Black" Click="BtnIngresarDatosProyecto_Click" Grid.ColumnSpan="5" RenderTransformOrigin="-18.611,5.727"/>
-                <TextBox x:Name="asdasdasd" Grid.Column="8" HorizontalAlignment="Left" Margin="26,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="92"/>
+                <Button x:Name="BtnIngresarDatosProyecto" Grid.Column="8" Content="Ingresar Datos" HorizontalAlignment="Left" Margin="10,298,0,0" VerticalAlignment="Top" Height="66" Width="192" FontSize="20" FontFamily="Arial Black" Click="BtnIngresarDatosProyecto_Click" RenderTransformOrigin="-18.611,5.727" Grid.ColumnSpan="3"/>
+                <Button x:Name="BtnVolverAlMenu" Grid.Column="8" Content="Volver" HorizontalAlignment="Left" Margin="10,115,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black" Click="Button_Click" Height="61" Width="192" Grid.ColumnSpan="3"/>
+                <Label x:Name="LblPeriodoTotal" Grid.Column="1" Content="Periodo total" HorizontalAlignment="Left" Margin="10,281,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black" Grid.ColumnSpan="5" Height="33" Width="187"/>
+                <TextBox x:Name="TxtPeriodoTotal" Grid.Column="6" HorizontalAlignment="Left" Margin="11,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" FontSize="20" Grid.ColumnSpan="2" Height="29" IsEnabled="False"/>
+                <Label x:Name="LblFechaPresupuesto" Grid.Column="1" Content="Fecha del Presupuesto" HorizontalAlignment="Left" Margin="10,362,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black" Grid.ColumnSpan="5" Height="33" Width="260"/>
+                <DatePicker x:Name="DtpFechaPresupuesto" Grid.Column="6" HorizontalAlignment="Left" Margin="11,363,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="273" FontFamily="Arial Black" FontSize="20"/>
             </Grid>
         </TabItem>
         <TabItem x:Name="TbiPVentas" Header="PVentas">
@@ -183,19 +189,25 @@
             </Grid>
         </TabItem>
         <TabItem x:Name="TbiPresupuestoMaestro" HorizontalAlignment="Center" Height="20" Header="PPresupuesto Maestro" VerticalAlignment="Top" Width="152" Margin="0,-1,0,0">
-            <Grid Background="#FFE5E5E5">
+            <Grid Background="#FFE5E5E5" Margin="10,0,0,0" Height="483">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="101*"/>
+                    <RowDefinition Height="149*"/>
+                </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="25*"/>
-                    <ColumnDefinition Width="279*"/>
-                    <ColumnDefinition Width="750*"/>
+                    <ColumnDefinition Width="24.763"/>
+                    <ColumnDefinition Width="276*"/>
+                    <ColumnDefinition Width="743*"/>
                 </Grid.ColumnDefinitions>
                 <Label Content="Gran Total del Presupuesto Maestro" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" FontFamily="Arial Black" FontSize="20" Width="413" Height="33"/>
-                <GroupBox x:Name="GbxPresupuestoMaestro" Header="" Grid.ColumnSpan="3" Margin="10,48,384,110" IsEnabled="False">
+                <GroupBox x:Name="GbxPresupuestoMaestro" Header="" Grid.ColumnSpan="3" Margin="10,48,384,110" IsEnabled="False" Grid.RowSpan="2">
                     <Grid>
-                        <TextBlock x:Name="TxtPresupuestoMaestro" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Height="319" Width="648"/>
+                        <TextBlock x:Name="TxtPresupuestoMaestro" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Height="319" Width="648" IsEnabled="False" FontSize="20" FontFamily="Arial Black"/>
                     </Grid>
                 </GroupBox>
-                <Button x:Name="BtnCalcularPresupuestoMaestro" Grid.Column="2" Content="Calcular" HorizontalAlignment="Left" Margin="506,280,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black" Height="110" Width="144" Click="BtnCalcularPresupuestoMaestro_Click"/>
+                <Button x:Name="BtnCalcularPresupuestoMaestro" Grid.Column="2" Content="Calcular" HorizontalAlignment="Left" Margin="483,129,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black" Height="66" Width="193" Click="BtnCalcularPresupuestoMaestro_Click"/>
+                <Button Grid.Column="2" Content="Volver" HorizontalAlignment="Left" Margin="640,10,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black" Click="Button_Click"/>
+                <Button Grid.Column="2" Content="Guardar Archivo" HorizontalAlignment="Left" Margin="483,0,0,0" VerticalAlignment="Center" FontFamily="Arial Black" FontSize="20" Height="66" Width="193" Grid.Row="1"/>
             </Grid>
         </TabItem>
     </TabControl>

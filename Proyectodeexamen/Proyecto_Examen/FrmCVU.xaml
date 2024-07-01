@@ -35,7 +35,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button Grid.Column="1" Content="Volver Al Menu" HorizontalAlignment="Left" Margin="502,10,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black" Click="Button_Click"/>
+        <Button Grid.Column="1" Content="Volver Al Menu" HorizontalAlignment="Left" Margin="480,10,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black" Click="Button_Click"/>
 
     </Grid>
 </Window>

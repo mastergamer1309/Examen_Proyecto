@@ -8,7 +8,7 @@ namespace BibliotecaClasess
 {
     public class CDatosGenerales
     {
-        string nombreEmpresa, periodoDeTiempo;
+        string nombreEmpresa, periodoDeTiempo, fechaPresupuesto;
         int periodoenanos, periodoDeTiempoConvertido;
         
        
@@ -17,8 +17,7 @@ namespace BibliotecaClasess
         public string PeriodoDeTiempo { get => periodoDeTiempo; set => periodoDeTiempo = value; }
         public int Periodoenanos { get => periodoenanos; set => periodoenanos = value; }
         public int PeriodoDeTiempoConvertido { get => periodoDeTiempoConvertido; set => periodoDeTiempoConvertido = value; }
-       
-
+        public string FechaPresupuesto { get => fechaPresupuesto; set => fechaPresupuesto = value; }
 
         public void calcularPeriodoDeTiempo(CDatosGenerales datos)
         {
