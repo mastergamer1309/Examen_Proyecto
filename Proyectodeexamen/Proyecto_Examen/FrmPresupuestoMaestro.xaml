@@ -27,7 +27,7 @@
                 <ComboBox x:Name="CmbPeriodoTiempo" Grid.Column="6" HorizontalAlignment="Left" Margin="11,114,0,0" VerticalAlignment="Top" Width="273" FontSize="20" SelectionChanged="CmbPeriodoTiempo_SelectionChanged" Grid.ColumnSpan="2" Height="33">
                     <ComboBoxItem Content="Mensual"/>
                     <ComboBoxItem Content="Bimestral"/>
-                    <ComboBoxItem Content="trimestral"/>
+                    <ComboBoxItem Content="Trimestral"/>
                     <ComboBoxItem Content="Cuatrimestral"/>
                     <ComboBoxItem Content="Semestral"/>
                     <ComboBoxItem Content="Anual"/>
@@ -189,8 +189,13 @@
                     <ColumnDefinition Width="241*"/>
                     <ColumnDefinition Width="788*"/>
                 </Grid.ColumnDefinitions>
-                <Label Content="Resumen Presupuesto Maestro" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" FontFamily="Arial Black" FontSize="20" Width="360"/>
-                <GroupBox x:Name="GbxPresupuestoMaestro" Header="" Grid.ColumnSpan="3" Margin="10,48,10,10"/>
+                <Label Content="Gran Total del Presupuesto Maestro" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" FontFamily="Arial Black" FontSize="20" Width="413"/>
+                <GroupBox x:Name="GbxPresupuestoMaestro" Header="" Grid.ColumnSpan="3" Margin="10,48,384,110" IsEnabled="False">
+                    <Grid>
+                        <TextBlock x:Name="TxtPresupuestoMaestro" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Height="319" Width="648"/>
+                    </Grid>
+                </GroupBox>
+                <Button x:Name="BtnCalcularPresupuestoMaestro" Grid.Column="2" Content="Calcular" HorizontalAlignment="Left" Margin="506,280,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black" Height="110" Width="144" Click="BtnCalcularPresupuestoMaestro_Click"/>
             </Grid>
         </TabItem>
     </TabControl>

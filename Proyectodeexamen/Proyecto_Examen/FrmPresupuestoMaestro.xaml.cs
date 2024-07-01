@@ -58,6 +58,12 @@ namespace Proyecto_Examen
         //Variables para presupuesto maestro 
 
         Double IngresosTotalesDelAno = 0;
+        Double CostosDeProduccionTotalesDelAno = 0;
+        Double GastosAdministrativosYDeVentasDelAno = 0;
+        Double CostosIndirectosDeFabricacionDelAno = 0;
+        Double TotalDeCostos = 0;
+        Double UtilidadNeta = 0;
+
 
         //botones
 
@@ -152,6 +158,8 @@ namespace Proyecto_Examen
                 venta.UnidadesVendidas = Convert.ToDouble(TxtUnidadesVendidas.Text);
                 venta.PrecioUnitario = Convert.ToDouble(TxtPrecioUnitario.Text);
                 venta.TotalVentas = (venta.PrecioUnitario * venta.UnidadesVendidas);
+
+                IngresosTotalesDelAno += venta.TotalVentas;
 
                 Array.Resize(ref ventas, ventas.Length + 1);
                 ventas[ventas.Length - 1] = venta;
@@ -317,6 +325,8 @@ namespace Proyecto_Examen
                 material.MaterialNecesario = (Convert.ToDouble(TxtCantidadMaterialPorUnidad.Text)*(Convert.ToInt32(TxtUnidadesAProducir.Text)));
                 material.CostoUnitario = Convert.ToDouble(TxtCostoUnitarioPMaterialesDirectos.Text);
                 material.TotalCostoMaterialesDirectos = (material.MaterialNecesario * material.CostoUnitario);
+
+                CostosDeProduccionTotalesDelAno += material.TotalCostoMaterialesDirectos;
                 
 
 
@@ -361,6 +371,8 @@ namespace Proyecto_Examen
                 mod.CostoPorHoraManoDeObra = Convert.ToDouble(TxtCostoPorHoraManoDeObra.Text);
                 mod.TotalCosto = ((mod.HorasNecesarias) *(mod.CostoPorHoraManoDeObra));
 
+                CostosDeProduccionTotalesDelAno += mod.TotalCosto;
+
 
 
                 Array.Resize(ref mods, mods.Length + 1);
@@ -387,7 +399,7 @@ namespace Proyecto_Examen
             {
                 MessageBox.Show("Ingrese los datos de los materiales", "Informacion", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            else if (contadorMOD == datosGenerales.PeriodoDeTiempoConvertido)
+            else if (contadorCIF == datosGenerales.PeriodoDeTiempoConvertido)
             {
                 MessageBox.Show("Se ha excedido el numero de periodos", "Informacion", MessageBoxButton.OK, MessageBoxImage.Error);
             }
@@ -399,6 +411,9 @@ namespace Proyecto_Examen
 
                 cif.Periodo = contadorCIF += 1;
                 cif.Cif = Convert.ToDouble(TxtCIF.Text);
+
+                CostosDeProduccionTotalesDelAno += cif.Cif;
+                CostosIndirectosDeFabricacionDelAno += cif.Cif;
 
 
 
@@ -440,6 +455,8 @@ namespace Proyecto_Examen
                 gasto.GastosAdministrativos = Convert.ToDouble(TxtGastosAdministrativos.Text);
                 gasto.GastosDeVentas = Convert.ToDouble(TxtGastosDeVentas.Text);
                 gasto.TotalGastos = ((gasto.GastosAdministrativos) + (gasto.GastosDeVentas));
+
+                GastosAdministrativosYDeVentasDelAno += gasto.TotalGastos;
 
 
 
@@ -503,6 +520,42 @@ namespace Proyecto_Examen
 
 
             }
+        }
+
+        private void BtnCalcularPresupuestoMaestro_Click(object sender, RoutedEventArgs e)
+        {
+
+            TotalDeCostos = (CostosDeProduccionTotalesDelAno + GastosAdministrativosYDeVentasDelAno);
+
+            UtilidadNeta = (IngresosTotalesDelAno - TotalDeCostos);
+
+            if (IngresosTotalesDelAno == 0 || CostosDeProduccionTotalesDelAno == 0 || GastosAdministrativosYDeVentasDelAno == 0
+                || CostosIndirectosDeFabricacionDelAno == 0 || TotalDeCostos == 0 || UtilidadNeta == 0)
+            {
+                MessageBox.Show("Faltan datos para el calculo del Presupuesto Maestro", "Informacion", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                
+
+                TxtPresupuestoMaestro.Text = impresion();
+            }
+           
+
+            
+
+        }
+
+        public string impresion()
+        {
+            string retorno = "";
+
+            
+
+            retorno += "Utilidad Neta(Ingresos Totales - Costos Totales): $" + IngresosTotalesDelAno + " - $" + TotalDeCostos + " : $" +
+                UtilidadNeta;
+
+            return retorno;
         }
     }
 }
