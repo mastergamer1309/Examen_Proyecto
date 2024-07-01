@@ -33,13 +33,31 @@ namespace Proyecto_Examen
         int periodoConvertido;
         bool verificarDatosIngresados;
 
-        int contadorventas = 0;
+        
 
         //Array
 
         CPVentas[] ventas = new CPVentas[0];
+        CPProduccion[] producciones = new CPProduccion[0];
+        CPMaterialesDirectos[] materiales = new CPMaterialesDirectos[0];
+        CPMod[] mods = new CPMod[0];
+        CPCif[] cifs = new CPCif[0];
+        CPGastosAdministrativos[] gastos = new CPGastosAdministrativos[0];
+        CPEfectivo[] efectivos = new CPEfectivo[0];
 
+        //contadores
 
+        int contadorventas = 0;
+        int contadorproduccion = 0;
+        int contadorMaterialesDirectos = 0;
+        int contadorMOD = 0;
+        int contadorCIF = 0;
+        int contadorGastos = 0;
+        int contadorEfectivo = 0;
+
+        //Variables para presupuesto maestro 
+
+        Double IngresosTotalesDelAno = 0;
 
         //botones
 
@@ -114,7 +132,10 @@ namespace Proyecto_Examen
 
         private void IngresarDatosPVentas_Click(object sender, RoutedEventArgs e)
         {
-            if(TxtProducto.Text.Length < 1 || TxtUnidadesVendidas.Text.Length <1 || TxtPrecioUnitario.Text.Length < 1  )
+
+            
+
+            if (TxtProducto.Text.Length < 1 || TxtUnidadesVendidas.Text.Length <1 || TxtPrecioUnitario.Text.Length < 1  )
             {
                 MessageBox.Show("Ingrese los datos de las ventas", "Informacion", MessageBoxButton.OK, MessageBoxImage.Error);
             }else if(contadorventas == datosGenerales.PeriodoDeTiempoConvertido)
@@ -126,7 +147,7 @@ namespace Proyecto_Examen
                 
 
                 CPVentas venta = new CPVentas();
-                venta.Periodo = contadorventas + 1;
+                venta.Periodo = contadorventas += 1;
                 venta.Producto = TxtProducto.Text;
                 venta.UnidadesVendidas = Convert.ToDouble(TxtUnidadesVendidas.Text);
                 venta.PrecioUnitario = Convert.ToDouble(TxtPrecioUnitario.Text);
@@ -144,7 +165,7 @@ namespace Proyecto_Examen
                 TxtPrecioUnitario.Clear();
                 GbxPVentas.IsEnabled=false;
 
-                contadorventas += 1;
+                
 
             }
         }
@@ -153,13 +174,334 @@ namespace Proyecto_Examen
         {
             if (verificarDatosIngresados == true)
             {
-                GbxPVentas.IsEnabled = true;
-                NuevoPeriodoPVentas.IsEnabled = false;
-                IngresarDatosPVentas.IsEnabled = true;
+                GbxPProduccion.IsEnabled = true;
+                BtnNuevoPeriodoPProduccion.IsEnabled = false;
+                BtnIngresarDatosPProduccion.IsEnabled = true;
             }
             else
             {
                 MessageBox.Show("Ingrese los datos del proyecto", "Informacion", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void BtnNuevoPeriodoPMaterialesDirectos_Click(object sender, RoutedEventArgs e)
+        {
+            if (verificarDatosIngresados == true)
+            {
+                GbxPMaterialesDirectos.IsEnabled = true;
+                BtnNuevoPeriodoPMaterialesDirectos.IsEnabled = false;
+                BtnIngresarDatosPMaterialesDirectos.IsEnabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Ingrese los datos del proyecto", "Informacion", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void BtnNuevoPeriodoPMOD_Click(object sender, RoutedEventArgs e)
+        {
+            if (verificarDatosIngresados == true)
+            {
+                GbxPMOD.IsEnabled = true;
+                BtnNuevoPeriodoPMOD.IsEnabled = false;
+                BtnIngresarDatosPMOD.IsEnabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Ingrese los datos del proyecto", "Informacion", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void BtnNuevoPeriodoPCIF_Click(object sender, RoutedEventArgs e)
+        {
+            if (verificarDatosIngresados == true)
+            {
+                GbxPCIF.IsEnabled = true;
+                BtnNuevoPeriodoPCIF.IsEnabled = false;
+                BtnIngresarDatosPCIF.IsEnabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Ingrese los datos del proyecto", "Informacion", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void BtnNuevoPeriodoPGastos_Click(object sender, RoutedEventArgs e)
+        {
+            if (verificarDatosIngresados == true)
+            {
+                GbxPGastos.IsEnabled = true;
+                BtnNuevoPeriodoPGastos.IsEnabled = false;
+                BtnIngresarDatosPGastos.IsEnabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Ingrese los datos del proyecto", "Informacion", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void BtnNuevoPeriodoPEfectivo_Click(object sender, RoutedEventArgs e)
+        {
+            if (verificarDatosIngresados == true)
+            {
+                GbxPEfectivo.IsEnabled = true;
+                BtnNuevoPeriodoPEfectivo.IsEnabled = false;
+                BtnIngresarDatosPEfectivo.IsEnabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Ingrese los datos del proyecto", "Informacion", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void BtnIngresarDatosPProduccion_Click(object sender, RoutedEventArgs e)
+        {
+            
+
+            if (TxtUnidadesVendidas1.Text.Length < 1 || TxtInventarioInicial.Text.Length < 1 || TxtInventarioFinalDeseado.Text.Length < 1)
+            {
+                MessageBox.Show("Ingrese los datos de las ventas", "Informacion", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else if (contadorproduccion == datosGenerales.PeriodoDeTiempoConvertido)
+            {
+                MessageBox.Show("Se ha excedido el numero de periodos", "Informacion", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+
+
+                CPProduccion produccion = new CPProduccion();
+
+                produccion.Periodo = contadorproduccion +=1;
+                produccion.UnidadesVendidas = Convert.ToInt32(TxtUnidadesVendidas1.Text);
+                produccion.InventarioInicial = Convert.ToInt32(TxtInventarioInicial.Text);
+                produccion.InventarioFinalDeseado = Convert.ToInt32(TxtInventarioFinalDeseado.Text);
+                produccion.UnidadesAProducir = (produccion.UnidadesVendidas + produccion.InventarioFinalDeseado - produccion.InventarioInicial);
+
+                Array.Resize(ref producciones, producciones.Length + 1);
+                producciones[producciones.Length - 1] = produccion;
+                DgPProduccion.ItemsSource = producciones;
+                DgPProduccion.Items.Refresh();
+
+                BtnNuevoPeriodoPProduccion.IsEnabled = true;
+                BtnIngresarDatosPProduccion.IsEnabled = false;
+                TxtUnidadesVendidas1.Clear();
+                TxtInventarioInicial.Clear();
+                TxtInventarioFinalDeseado.Clear();
+                GbxPProduccion.IsEnabled = false;
+
+                
+
+            }
+        }
+
+        private void BtnIngresarDatosPMaterialesDirectos_Click(object sender, RoutedEventArgs e)
+        {
+            if (TxtUnidadesAProducir.Text.Length < 1 || TxtMaterialPrincipal.Text.Length < 1 || TxtCantidadMaterialPorUnidad.Text.Length < 1 || TxtCostoUnitarioPMaterialesDirectos.Text.Length < 1)
+            {
+                MessageBox.Show("Ingrese los datos de los materiales", "Informacion", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else if (contadorMaterialesDirectos == datosGenerales.PeriodoDeTiempoConvertido)
+            {
+                MessageBox.Show("Se ha excedido el numero de periodos", "Informacion", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+
+
+                CPMaterialesDirectos material = new CPMaterialesDirectos();
+
+                material.Periodo = contadorMaterialesDirectos += 1;
+                material.UnidadesAProducir = Convert.ToInt32(TxtUnidadesAProducir.Text);
+                material.MaterialPrincipal = TxtMaterialPrincipal.Text;
+                material.MaterialNecesario = (Convert.ToDouble(TxtCantidadMaterialPorUnidad.Text)*(Convert.ToInt32(TxtUnidadesAProducir.Text)));
+                material.CostoUnitario = Convert.ToDouble(TxtCostoUnitarioPMaterialesDirectos.Text);
+                material.TotalCostoMaterialesDirectos = (material.MaterialNecesario * material.CostoUnitario);
+                
+
+
+                Array.Resize(ref materiales, materiales.Length + 1);
+                materiales[materiales.Length - 1] = material;
+                DgPMaterialesDirectos.ItemsSource = materiales;
+                DgPMaterialesDirectos.Items.Refresh();
+
+                BtnNuevoPeriodoPMaterialesDirectos.IsEnabled = true;
+                BtnIngresarDatosPMaterialesDirectos.IsEnabled = false;
+                TxtUnidadesAProducir.Clear();
+                TxtMaterialPrincipal.Clear();
+                TxtCantidadMaterialPorUnidad.Clear();
+                TxtCostoUnitarioPMaterialesDirectos.Clear();
+                GbxPMaterialesDirectos.IsEnabled = false;
+
+
+
+            }
+        }
+
+        private void BtnIngresarDatosPMOD_Click(object sender, RoutedEventArgs e)
+        {
+            if (TxtUnidadesAProducir1.Text.Length < 1 || TxtHorasModPorUnidad.Text.Length < 1 || TxtCostoPorHoraManoDeObra.Text.Length < 1)
+            {
+                MessageBox.Show("Ingrese los datos de los materiales", "Informacion", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else if (contadorMOD == datosGenerales.PeriodoDeTiempoConvertido)
+            {
+                MessageBox.Show("Se ha excedido el numero de periodos", "Informacion", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+
+
+                CPMod mod = new CPMod();
+
+                mod.Periodo = contadorMOD += 1;
+                mod.UnidadesAProducir = Convert.ToInt32(TxtUnidadesAProducir1.Text);
+                mod.HorasDeMODPorUnidad = Convert.ToDouble(TxtHorasModPorUnidad.Text);
+                mod.HorasNecesarias = ((mod.UnidadesAProducir) * (mod.HorasDeMODPorUnidad));
+                mod.CostoPorHoraManoDeObra = Convert.ToDouble(TxtCostoPorHoraManoDeObra.Text);
+                mod.TotalCosto = ((mod.HorasNecesarias) *(mod.CostoPorHoraManoDeObra));
+
+
+
+                Array.Resize(ref mods, mods.Length + 1);
+                mods[mods.Length - 1] = mod;
+                DgPMOD.ItemsSource = mods;
+                DgPMOD.Items.Refresh();
+
+                BtnNuevoPeriodoPMOD.IsEnabled = true;
+                BtnIngresarDatosPMOD.IsEnabled = false;
+                TxtUnidadesAProducir1.Clear();
+                TxtHorasModPorUnidad.Clear();
+                TxtCostoPorHoraManoDeObra.Clear();
+             
+                GbxPMOD.IsEnabled = false;
+
+
+
+            }
+        }
+
+        private void BtnIngresarDatosPCIF_Click(object sender, RoutedEventArgs e)
+        {
+            if (TxtCIF.Text.Length < 1)
+            {
+                MessageBox.Show("Ingrese los datos de los materiales", "Informacion", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else if (contadorMOD == datosGenerales.PeriodoDeTiempoConvertido)
+            {
+                MessageBox.Show("Se ha excedido el numero de periodos", "Informacion", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+
+
+                CPCif cif = new CPCif();
+
+                cif.Periodo = contadorCIF += 1;
+                cif.Cif = Convert.ToDouble(TxtCIF.Text);
+
+
+
+                Array.Resize(ref cifs, cifs.Length + 1);
+                cifs[cifs.Length - 1] = cif;
+                DgPCIF.ItemsSource = cifs;
+                DgPCIF.Items.Refresh();
+
+                BtnNuevoPeriodoPCIF.IsEnabled = true;
+                BtnIngresarDatosPCIF.IsEnabled = false;
+                TxtCIF.Clear();
+                
+
+
+                GbxPCIF.IsEnabled = false;
+
+
+
+            }
+        }
+
+        private void BtnIngresarDatosPGastos_Click(object sender, RoutedEventArgs e)
+        {
+            if (TxtGastosAdministrativos.Text.Length < 1 || TxtGastosDeVentas.Text.Length < 1)
+            {
+                MessageBox.Show("Ingrese los datos de los materiales", "Informacion", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else if (contadorGastos == datosGenerales.PeriodoDeTiempoConvertido)
+            {
+                MessageBox.Show("Se ha excedido el numero de periodos", "Informacion", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+
+
+               CPGastosAdministrativos gasto = new CPGastosAdministrativos();
+
+                gasto.Periodo = contadorGastos += 1;
+                gasto.GastosAdministrativos = Convert.ToDouble(TxtGastosAdministrativos.Text);
+                gasto.GastosDeVentas = Convert.ToDouble(TxtGastosDeVentas.Text);
+                gasto.TotalGastos = ((gasto.GastosAdministrativos) + (gasto.GastosDeVentas));
+
+
+
+
+                Array.Resize(ref gastos, gastos.Length + 1);
+                gastos[gastos.Length - 1] = gasto;
+                DgPGastos.ItemsSource = gastos;
+                DgPGastos.Items.Refresh();
+
+                BtnNuevoPeriodoPGastos.IsEnabled = true;
+                BtnIngresarDatosPGastos.IsEnabled = false;
+                TxtGastosAdministrativos.Clear();
+                TxtGastosDeVentas.Clear();
+                
+
+                GbxPGastos.IsEnabled = false;
+
+
+
+            }
+        }
+
+        private void BtnIngresarDatosPEfectivo_Click(object sender, RoutedEventArgs e)
+        {
+            if (TxtEntradasDeEfectivo.Text.Length < 1 || TxtSalidasDeEfectivo.Text.Length < 1)
+            {
+                MessageBox.Show("Ingrese los datos de los materiales", "Informacion", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else if (contadorEfectivo == datosGenerales.PeriodoDeTiempoConvertido)
+            {
+                MessageBox.Show("Se ha excedido el numero de periodos", "Informacion", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+
+
+                CPEfectivo efectivo = new CPEfectivo();
+
+                efectivo.Periodo = contadorEfectivo += 1;
+
+                efectivo.EntradasDeEfectivo = Convert.ToDouble(TxtEntradasDeEfectivo.Text);
+                efectivo.SalidasDeEfectivo = Convert.ToDouble(TxtSalidasDeEfectivo.Text);
+                efectivo.FlujoNetoDeEfectivo = ((efectivo.EntradasDeEfectivo)- (efectivo.SalidasDeEfectivo));
+
+
+
+
+                Array.Resize(ref efectivos, efectivos.Length + 1);
+                efectivos[efectivos.Length - 1] = efectivo;
+                DgPEfectivo.ItemsSource = efectivos;
+                DgPEfectivo.Items.Refresh();
+
+                BtnNuevoPeriodoPEfectivo.IsEnabled = true;
+                BtnIngresarDatosPEfectivo.IsEnabled = false;
+                TxtEntradasDeEfectivo.Clear();
+                TxtSalidasDeEfectivo.Clear();
+
+
+                GbxPEfectivo.IsEnabled = false;
+
+
+
             }
         }
     }

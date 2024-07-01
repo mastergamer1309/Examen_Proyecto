@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace BibliotecaClasess
 {
-    internal class CPCif
+    public class CPCif
     {
+        int periodo;
+        double cif;
+
+        public int Periodo { get => periodo; set => periodo = value; }
+        public double Cif { get => cif; set => cif = value; }
     }
 }

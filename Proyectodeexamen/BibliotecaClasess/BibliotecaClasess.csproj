@@ -47,6 +47,7 @@
     <Compile Include="CPGastosAdministrativos.cs" />
     <Compile Include="CPMaterialesDirectos.cs" />
     <Compile Include="CPMod.cs" />
+    <Compile Include="CPPresupuestoMaestro.cs" />
     <Compile Include="CPProduccion.cs" />
     <Compile Include="CPVentas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace BibliotecaClasess
 {
-    internal class CPEfectivo
+    public class CPEfectivo
     {
+        int periodo;
+        double entradasDeEfectivo, salidasDeEfectivo, flujoNetoDeEfectivo;
+
+        public int Periodo { get => periodo; set => periodo = value; }
+        public double EntradasDeEfectivo { get => entradasDeEfectivo; set => entradasDeEfectivo = value; }
+        public double SalidasDeEfectivo { get => salidasDeEfectivo; set => salidasDeEfectivo = value; }
+        public double FlujoNetoDeEfectivo { get => flujoNetoDeEfectivo; set => flujoNetoDeEfectivo = value; }
     }
 }
