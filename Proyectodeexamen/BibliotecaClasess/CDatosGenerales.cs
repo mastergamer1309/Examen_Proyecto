@@ -10,13 +10,14 @@ namespace BibliotecaClasess
     {
         string nombreEmpresa, periodoDeTiempo;
         int periodoenanos, periodoDeTiempoConvertido;
+        
        
 
         public string NombreEmpresa { get => nombreEmpresa; set => nombreEmpresa = value; }
         public string PeriodoDeTiempo { get => periodoDeTiempo; set => periodoDeTiempo = value; }
         public int Periodoenanos { get => periodoenanos; set => periodoenanos = value; }
         public int PeriodoDeTiempoConvertido { get => periodoDeTiempoConvertido; set => periodoDeTiempoConvertido = value; }
-
+       
 
 
         public void calcularPeriodoDeTiempo(CDatosGenerales datos)
