@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calculos.cs" />
     <Compile Include="CDatosGenerales.cs" />
     <Compile Include="CPCif.cs" />
     <Compile Include="CPEfectivo.cs" />

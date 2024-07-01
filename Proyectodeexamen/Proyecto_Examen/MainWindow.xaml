@@ -6,7 +6,5 @@
         xmlns:local="clr-namespace:Proyecto_Examen"
         mc:Ignorable="d"
         Title="MainWindow" Height="525" Width="1042">
-    <Grid>
-        
-    </Grid>
+    
 </Window>

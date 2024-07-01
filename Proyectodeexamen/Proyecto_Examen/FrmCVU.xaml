@@ -5,8 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_Examen"
         mc:Ignorable="d"
-        Title="Análisis Costo-Valor-Utilidad" Height="450" Width="800">
-    <Grid>
-        
+        Title="FrmCVU" Height="450" Width="800">
+    <Grid Background="#FF6CC5BA">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="121*"/>
+            <ColumnDefinition Width="679*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="lblPrecioDeVentaPorUnidad" Content="Precio  de venta por unidad" HorizontalAlignment="Left" Margin="10,51,0,0" VerticalAlignment="Top" FontSize="18" Grid.ColumnSpan="2"/>
+        <Label x:Name="LblCostoVariablePorUnidad" Content="Costo Variable por unidad" HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top" FontSize="18" Grid.ColumnSpan="2"/>
+        <Label x:Name="LblCostosFijosTotales" Content="Costos fijos Totales" HorizontalAlignment="Left" Margin="10,113,0,0" VerticalAlignment="Top" FontSize="18" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="TxtPrecioDeVentaPorUnidad" HorizontalAlignment="Left" Margin="159,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <TextBox x:Name="TxtCostoVariablePorUnidad" HorizontalAlignment="Left" Margin="159,90,0,0" TextWrapping="Wrap" Text="&#xD;&#xA;" VerticalAlignment="Top" Width="120" Height="18" Grid.Column="1"/>
+        <TextBox x:Name="TxtCostosFijosTotales" HorizontalAlignment="Left" Margin="159,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <Label x:Name="LblDatos" Content="Datos" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <Label x:Name="LblCalculos" Content="Calculos" HorizontalAlignment="Center" Margin="0,156,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <Label x:Name="LblMargenDeContribucionPorUnidad" Content="Margen de contribucion por unidad" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="TxtMargenDeContribucionPorUnidad" HorizontalAlignment="Left" Margin="191,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" IsEnabled="False" Grid.Column="1"/>
+        <Label x:Name="LblPuntoDeEquilibrioEnUnidades" Content="Punto de Equilibrio en unidades" HorizontalAlignment="Left" Margin="0,258,0,0" VerticalAlignment="Top" FontSize="18" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="TxtPuntoDeEquilibrioEnUnidades" HorizontalAlignment="Left" Margin="191,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" Grid.Column="1"/>
+        <Label x:Name="LblPuntoDeEquilibrioEnVentas" Content="Punto de Equlibrio en Ventas" HorizontalAlignment="Left" Margin="10,312,0,0" VerticalAlignment="Top" Width="260" FontSize="18" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="TxtPuntoDeEquilibrioEnVentas" HorizontalAlignment="Left" Margin="191,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" Grid.Column="1"/>
+        <Button x:Name="BtnCalcular" Content="Calcular" HorizontalAlignment="Left" Margin="384,155,0,0" VerticalAlignment="Top" Height="62" Width="212" Click="BtnCalcular_Click" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.09"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Grid.Column="1" Content="Volver Al Menu" HorizontalAlignment="Left" Margin="502,10,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black" Click="Button_Click"/>
+
     </Grid>
 </Window>

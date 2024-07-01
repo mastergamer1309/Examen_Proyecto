@@ -186,10 +186,10 @@
             <Grid Background="#FFE5E5E5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="25*"/>
-                    <ColumnDefinition Width="241*"/>
-                    <ColumnDefinition Width="788*"/>
+                    <ColumnDefinition Width="279*"/>
+                    <ColumnDefinition Width="750*"/>
                 </Grid.ColumnDefinitions>
-                <Label Content="Gran Total del Presupuesto Maestro" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" FontFamily="Arial Black" FontSize="20" Width="413"/>
+                <Label Content="Gran Total del Presupuesto Maestro" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" FontFamily="Arial Black" FontSize="20" Width="413" Height="33"/>
                 <GroupBox x:Name="GbxPresupuestoMaestro" Header="" Grid.ColumnSpan="3" Margin="10,48,384,110" IsEnabled="False">
                     <Grid>
                         <TextBlock x:Name="TxtPresupuestoMaestro" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Height="319" Width="648"/>

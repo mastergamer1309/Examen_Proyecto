@@ -27,12 +27,33 @@ namespace Proyecto_Examen
         private void BtnPresupuestoMaestro_Click(object sender, RoutedEventArgs e)
         {
             FrmPantallaPrincipal frmPantallaPrincipal = new FrmPantallaPrincipal();
+
             FrmPresupuestoMaestro frmPresupuestoMaestro = new FrmPresupuestoMaestro();
 
             frmPresupuestoMaestro.Show();
             
             this.Close();
 
+        }
+
+        private void BtnCalculoCVU_Click(object sender, RoutedEventArgs e)
+        {
+            FrmPantallaPrincipal frmPantallaPrincipal = new FrmPantallaPrincipal();
+            
+            FrmCVU frmCVU = new FrmCVU();
+
+            frmCVU.Show();
+
+
+            this.Close();
+        }
+
+        private void BtnSalir_Click(object sender, RoutedEventArgs e)
+        {
+            FrmPantallaPrincipal repollo = new FrmPantallaPrincipal();
+
+
+            Application.Current.Shutdown();
         }
     }
 }

@@ -529,17 +529,11 @@ namespace Proyecto_Examen
 
             UtilidadNeta = (IngresosTotalesDelAno - TotalDeCostos);
 
-            if (IngresosTotalesDelAno == 0 || CostosDeProduccionTotalesDelAno == 0 || GastosAdministrativosYDeVentasDelAno == 0
-                || CostosIndirectosDeFabricacionDelAno == 0 || TotalDeCostos == 0 || UtilidadNeta == 0)
-            {
-                MessageBox.Show("Faltan datos para el calculo del Presupuesto Maestro", "Informacion", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            else
-            {
+            
                 
 
                 TxtPresupuestoMaestro.Text = impresion();
-            }
+            
            
 
             
@@ -552,7 +546,7 @@ namespace Proyecto_Examen
 
             
 
-            retorno += "Utilidad Neta(Ingresos Totales - Costos Totales): $" + IngresosTotalesDelAno + " - $" + TotalDeCostos + " : $" +
+            retorno += "Utilidad Neta (Ingresos Totales - Costos Totales): $" + IngresosTotalesDelAno + " -  $" + TotalDeCostos + " = $" +
                 UtilidadNeta;
 
             return retorno;
